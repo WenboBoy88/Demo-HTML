@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的使用</title>
+    <script type="text/javascript">
+        // 1.0 创建对象
+
+        // this？
+        // this 所在的函数属于哪个对象，this就代表这个对象
+
+        var dog = {
+            name: '大黄',
+            age: 18,
+            height: 1.44,
+            friends: ["honghong", "nini"],
+            eat: function (something) {
+                console.log(this.name + '吃' + something);
+            },
+            jump: function (somewhere) {
+                console.log(this.name + '跑' + somewhere);
+            }
+        };
+
+        console.log(dog.name);
+        dog.eat('骨头')
+        dog.jump('郑州');
+
+        // 2.0 构造函数
+        // 普通函数
+        var Dog2 = function () {
+            console.log('这是普通函数');
+        }
+        Dog2();
+
+        // 构造函数
+        var dog2_1 = new Dog2();
+        console.log(typeof dog2_1);
+
+        // 3.0 创建构造函数
+        var Dog3 = function () {
+            this.name = null;
+            this.age = null;
+            this.dogFriend = [];
+            this.eat = function (something) {
+                console.log(this.name + '吃' + something);
+            }
+        }
+
+        var dog3_1 = new Dog3();
+        dog3_1.name = "AAA";
+        dog3_1.age  = 23;
+        dog3_1.eat('方便吗');
+        console.log(dog3_1);
+
+        // 4.0 内置对象
+        // 4.1 所有全局的变量都是window的属性
+        // 4.2 所有的全局函数都是window的方法
+        //
+        // 全局变量
+        var age = 17;
+        console.log(window.age);
+        // 全局函数
+        function Dog4() {
+            var name = 'Huang';
+            console.log(this.name);
+        }
+        Dog4();
+        window.Dog4();
+        window.alert('哈哈');
+        window.console.log('么么');
+
+        function Person() {
+            console.log(this);
+        }
+
+        Person();
+        var person = new Person();
+
+        // 4.3 动态跳转
+        alert(0);
+//        window.location.href = 'http://www.baidu.com';
+        window.location.href = 'SZXK://openCamera?user=&';
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: rgba(18, 140, 88, 1.0);
+
+    /*position: absolute;*/
+}
+
+
+#content {
+    background-color: white;
+
+    width: 80%;
+    max-width: 380px;
+    border-radius: 5px;
+
+    /*设置位置*/
+    text-align: center;
+    margin: 0 auto;
+
+    margin-top: 25%;
+    margin-bottom: 10px;
+}
+
+#content .content-pic img {
+    width: 60%;
+    padding-top: 30px;
+}
+
+/*文字内容*/
+#content .content-text{
+    margin-top: 10px;
+
+    padding-bottom: 40px;
+}
+
+.content-text div {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #666666;
+    font-family: SansSerif;
+    font-size: 16px;
+}
+
+
+/*!*返回首页的样式*!*/
+/*#content .content-click a {*/
+    /*background-color: rgba(241, 65, 66, 1.0);*/
+    /*width: 50%;*/
+    /*height: 36px;*/
+    /*color: white;*/
+    /*!*设置样式*!*/
+    /*display: inline-block;*/
+    /*!*水平居中*!*/
+    /*text-align: center;*/
+    /*!*竖直居中*!*/
+    /*line-height: 36px;*/
+    /*!*字体大小*!*/
+    /*font-size: 14px;*/
+    /*!*去掉下划线*!*/
+    /*text-decoration: none;*/
+    /*!*圆角*!*/
+    /*border-radius: 18px;*/
+    /*!*下间距*!*/
+    /*margin: 30px auto;*/
+
+/*}*/
+

@@ -1,0 +1,102 @@
+
+/*设置通配符*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    /*去除下划线*/
+    text-decoration: none;
+    /*统一字体颜色*/
+    color: black;
+}
+
+/*引用外部文件*/
+@font-face {
+    /*font-family: '';*/
+    /*src: url("../fonts/");*/
+}
+
+body {
+    background: url("../imgs") no-repeat;
+    /*引用*/
+    /*font-family: ;*/
+}
+
+#header {
+    background-color: red;
+    height: 3px;
+}
+
+#nav {
+    text-align: center;
+}
+
+#nav ul {
+    display: inline-block;
+}
+
+#nav ul li {
+    display: inline-block;
+
+}
+
+#nav ul li a {
+    /*改变标签的类型*/
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    /*垂直居中*/
+    line-height: 50px;
+    /*设置文字的大小*/
+    font-size: 35px;
+}
+
+#nav ul li a.selected, #nav ul li a:hover, #list .love a:hover {
+    background-color: black;
+    color: white;
+}
+
+#list {
+    margin-top: 100px;
+
+}
+
+#list .love {
+    background-color: white;
+    width: 382px;
+    /*改变标签类型*/
+    display: inline-block;
+
+}
+
+#list .love img {
+    display: inline-block;
+    width: 382px;
+    height: 200px;
+    background-color: aqua;
+}
+
+#list .love a {
+    background-color: orange;
+    color: white;
+    display: inline-block;
+    width: 120px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 24px;
+
+    /*居中*/
+    text-align: center;
+    line-height: 45px;
+}
+
+
+
+#list .love p {
+    font-family: sans-serif;
+    margin: 8px 0;
+    /*首行缩进*/
+    text-indent: 30px;
+}
