@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+
+}
+
+body {
+    background: url("../imgs/bd_logo1.png");
+    background-size: cover;
+}
+
+/*头部*/
+#header {
+    /*头部的背景 阴影*/
+    background-color: rgba(0, 0, 0, 0.3);
+    /*右对齐*/
+    text-align: right;
+    /*设置上下间距*/
+    /*margin: 15px 0;*/
+    /*设置高度*/
+    height: 42px;
+    /*设置垂直居中*/
+    line-height: 42px;
+}
+
+#header a {
+    /*加粗*/
+    font-weight: bolder;
+    /*设置字体*/
+    font-family: 'sans-serif';
+    /*设置文字大小*/
+    font-size: 13px;
+    /*设置右间距*/
+    margin-right: 8px;
+
+    color: white;
+}
+
+#header a.no-bold {
+    font-weight: normal;
+}
+
+#header a.more-product {
+    background-color: #3385ff;
+    color: white;
+    /*去除下划线*/
+    text-decoration: none;
+    /*设置内边距*/
+    padding: 6px;
+}
+
+
+/*中间*/
+#content {
+
+}
+
+#content .top-content {
+    /*居中*/
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#content .top-content img {
+    /*设置宽高*/
+    width: 270px;
+    height: 129px;
+}
+
+#content .middle-content {
+    width: 600px;
+    height: 35px;
+    margin: 0 auto 30px;
+}
+
+#content .middle-content input {
+    width: 500px;
+    height: 100%;
+    /*不显示边框*/
+    box-sizing: border-box;
+    /*左内边距*/
+    padding-left: 8px;
+    /*字体大小*/
+    font-size: 16px;
+    /*边框大小*/
+    border: 1px solid #dddddd;
+}
+
+#content .middle-content input:focus {
+    /*去除外边线*/
+    outline: none;
+    border: 1px solid #3385ff;
+}
+
+#content .middle-content a {
+    background-color: #3385ff;
+    color: white;
+    /*去除下划线*/
+    text-decoration: none;
+    width: 100px;
+    height: 100%;
+    /*改变标签的类型*/
+    display: inline-block;
+
+    /*浮动*/
+    float: right;
+
+    /*水平居中*/
+    text-align: center;
+    line-height: 38px;
+}
+
+#content .bottom-content {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#content .bottom-content img {
+    width: 110px;
+    height: 110px;
+    /*设置外边距*/
+    margin: 0 5px;
+}
+/*伪类设置遮罩层*/
+#content .bottom-content img:hover {
+    /*设置不透明度*/
+    opacity: 0.5;
+}
+
+/*尾部*/
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 30px 0;
+
+    font-size: 13px;
+
+    text-align: center;
+
+}
+
+#footer a {
+    margin: 0 5px;
+    color: darkgray;
+}
+
+#footer .top-footer {
+    margin-bottom: 5px;
+}
+
