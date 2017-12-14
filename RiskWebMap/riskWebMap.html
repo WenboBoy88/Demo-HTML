@@ -10,9 +10,9 @@
 
 </head>
 <body>
-    <div id="allmap">
-
-    </div>
+<!--<input type="button" onclick="$('#allmap div.BMap_cpyCtrl').hide();" value="移除百度地图LOGO和版权说明"/>-->
+<!--<input type="button" onclick="$('#allmap div.anchorBL').hide();" value="移除地图LOGO和版权说明"/>-->
+<div id="allmap"></div>
 </body>
 </html>
 
@@ -20,7 +20,7 @@
 <script type="text/javascript">
     // 百度地图API功能
 
-    // 加载地图的API
+    // 异步加载百度地图
     function loadJScript() {
         var script = document.createElement("script");
         script.type = "text/javascript";
@@ -35,18 +35,121 @@
         console.log("初始化");
         var map = new BMap.Map("allmap");
         // 初始化地图,设置中心点坐标(longitude，latitude)和地图级别
-        // var point = new BMap.point(116.404, 39.915);
-        map.centerAndZoom(new BMap.Point(116.404, 39.915), 15);
-        //添加地图类型控件
+//         var point = new BMap.Point(116.404, 39.915);
+//        map.centerAndZoom(point, 12);
+        map.centerAndZoom("北京", 12); // 直接定位到当前的位置
+
+        // 添加地图类型控件 正常地图和卫星地图
         map.addControl(new BMap.MapTypeControl({
+            offset: new BMap.Size(10, 60),
             mapTypes:[
                 BMAP_NORMAL_MAP,
                 BMAP_HYBRID_MAP
             ]}));
+
         // 设置地图显示的城市 此项是必须设置的
-        map.setCurrentCity("北京");
+        map.setCurrentCity("郑州");
         //开启鼠标滚轮缩放
         map.enableScrollWheelZoom(true);
+
+//        // 自定义控件
+//        // 地市简介
+//        function CityRecommend() {
+//            this.defaultAnchor = BMAP_ANCHOR_TOP_RIGHT;
+//            this.defaultOffset = new BMap.Size(10, 100);
+//        }
+//        // 投保推荐
+//        function InsuranceCommend() {
+//            this.defaultAnchor = BMAP_ANCHOR_TOP_RIGHT;
+//            this.defaultOffset = new BMap.Size(10, 160);
+//        }
+//
+//        // 继承BMap.Control
+//        CityRecommend.prototype = new BMap.Control();
+//        InsuranceCommend.prototype = new BMap.Control();
+//
+//        // 实现各自的initialize方法
+//        CityRecommend.prototype.initialize = function (map) {
+//            console.log('自定义控件城市简介initialize');
+//            // 创建个div元素
+//            var div = document.createElement("div");
+//            // 添加文字说明
+//            div.appendChild(document.createTextNode("地市简介"));
+//            // 设置样式
+//            div.style.cursor = "pointer";
+//            div.style.border = "1px solid gray";
+//            div.style.backgroundColor = "white";
+//
+//            // 绑定事件
+//            div.onclick = function (e) {
+//                alert("地市简介")
+//            }
+//            // 添加DOM元素到地图中
+//            map.getContainer().appendChild(div);
+//            // 将DOM元素返回
+//            return div;
+//        }
+//
+//        InsuranceCommend.prototype.initialize = function (map) {
+//            console.log('自定义控件投保推荐initialize');
+//            var div = document.createEl//
+//            div.onclick = function (e) {
+//                alert("投保推荐 ")
+//            }
+//
+//            map.getContainer().appendChild(div);
+//            return div;
+//        }
+//        // 创建控件
+//        var cityRecommend = new CityRecommend();
+//        var insuranceCommend = new InsuranceCommend();
+//        // 添加到地图当中
+//        map.addControl(cityRecommend);
+//        map.addControl(insuranceCommend);
+
+        //右边，包含缩放按钮
+//        var right_navigation = new BMap.NavigationControl({anchor:
+//        BMAP_ANCHOR_TOP_RIGHT , type: BMAP_NAVIGATION_CONTROL_ZOOM});
+//        // 偏移量
+//        top_right_navigation.setOffset(new BMap.Size(10, 300));ement("div");
+//            div.appendChild(document.createTextNode("投保推荐"));
+//
+//            div.style.cursor = "pointer";
+//            div.style.border = "1px solid gray";
+//            div.style.backgroundColor = "white";
+
+
+        var right_navigation = new BMap.NavigationControl({
+            // 右中间
+            anchor: BMAP_ANCHOR_TOP_RIGHT,
+            // 类型 缩放
+            type: BMAP_NAVIGATION_CONTROL_ZOOM,
+            // 偏移量
+            offset: new BMap.Size(10, 300),
+            // 启动定位
+            enableGeolocation: true
+        });
+        // 添加控件
+        map.addControl(right_navigation);
+
+        // 添加定位控件
+        var geolocationControl = new BMap.GeolocationControl();
+        geolocationControl.addEventListener("locationSuccess", function(e){
+            // 定位成功事件
+            var address = '';
+            address += e.addressComponent.province;
+            address += e.addressComponent.city;
+            address += e.addressComponent.district;
+            address += e.addressComponent.street;
+            address += e.addressComponent.streetNumber;
+            alert("当前定位地址为：" + address);
+        });
+        geolocationControl.addEventListener("locationError",function(e){
+            // 定位失败事件
+            alert(e.message);
+        });
+        map.addControl(geolocationControl);
+
     }
 
     window.onload = loadJScript;
