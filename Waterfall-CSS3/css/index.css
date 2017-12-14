@@ -8,8 +8,12 @@
 
 #main {
     /*定位*/
-    position: relative;
+    /*position: relative;*/
 
+    /*多栏布局: 设置个栏宽度*/
+    -webkit-column-width: 202px;
+    -moz-column-width:  ;
+    column-width: ;
 }
 
 .box {
