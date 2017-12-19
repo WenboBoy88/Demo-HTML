@@ -88,6 +88,11 @@ function getMinBoxIndex(val, heightArr) {
     }
 }
 
+printLogTest('xiao huang gou');
+function printLogTest(dog) {
+    alert(dog);
+}
+
 
 // 判断是否符合加载条件
 function cheackWillLoad() {

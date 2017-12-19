@@ -7,6 +7,7 @@ function $(id) {
 
 // 当网页加载完毕时调用
 window.onload = function () {
+
     // 拿到所有的li标签和内容
     var lis = $('tab-header').getElementsByTagName('li');
     var contents = $('tab-content').getElementsByClassName('dom');
