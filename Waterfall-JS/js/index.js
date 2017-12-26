@@ -11,7 +11,7 @@ window.onload = function () {
         // 条件
         if (cheackWillLoad()) {
             // 造数据
-            var data = {'dataImg':[{'img':'1.jpg'}, {'img':'19.jpg'}, {'img':'14.jpg'}, {'img':'16.jpg'}, {'img':'17.jpg'}, {'img':'13.jpg'}, {'img':'15.jpg'}, {'img':'18.jpg'}, {'img':'12.jpg'}]}
+            var data = {'dataImg':[{'img':'1.jpg'}, {'img':'19.jpg'}, {'img':'14.jpg'}, {'img':'16.jpg'}, {'img':'17.jpg'}, {'img':'13.jpg'}, {'img':'15.jpg'}, {'img':'18.jpg'}, {'img':'12.jpg'}]};
 
 
             // 加载数据
@@ -87,12 +87,6 @@ function getMinBoxIndex(val, heightArr) {
             return i;
     }
 }
-
-printLogTest('xiao huang gou');
-function printLogTest(dog) {
-    alert(dog);
-}
-
 
 // 判断是否符合加载条件
 function cheackWillLoad() {
