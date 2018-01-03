@@ -11,9 +11,9 @@
     /*position: relative;*/
 
     /*多栏布局: 设置个栏宽度*/
-    -webkit-column-width: 202px;
-    -moz-column-width:  ;
-    column-width: ;
+    -webkit-column-gap: 202px;
+    -moz-column-gap: 202px;
+    column-gap: 202px;
 }
 
 .box {
