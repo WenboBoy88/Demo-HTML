@@ -48,7 +48,7 @@
             ]}));
 
         // 设置地图显示的城市 此项是必须设置的
-        map.setCurrentCity("郑州");
+        // map.setCurrentCity("郑州");
         //开启鼠标滚轮缩放
         map.enableScrollWheelZoom(true);
 
@@ -150,6 +150,29 @@
         });
         map.addControl(geolocationControl);
 
+        var geoc = new BMap.Geocoder();
+        map.addEventListener("click", showInfo);
+
+        function showInfo(e){
+            map.clearOverlays();
+            var marker = new BMap.Marker(new BMap.Point(e.point.lng, e.point.lat));
+            map.addOverlay(marker);    //增加点
+            marker.addEventListener("click", function(e) {
+                map.removeEventListener("click", showInfo);
+                var pt = marker.getPosition();  //获取marker的位置;
+
+                geoc.getLocation(pt, function(rs) {
+                    var addComp = rs.addressComponents;
+                    alert(addComp.province + ", " + addComp.city + ", " +
+                        addComp.district + ", " + addComp.street + ", " +
+                        addComp.streetNumber);
+                    map.addEventListener("click", showInfo);
+                });
+            });
+        }
+
+
+</script>
     }
 
     window.onload = loadJScript;

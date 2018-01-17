@@ -40,6 +40,7 @@ window.onload = function () {
     }
 }
 
+
 // 实现瀑布流布局
 function waterFall(parent, son) {
     // 1 父盒子居中
@@ -87,7 +88,6 @@ function getMinBoxIndex(val, heightArr) {
             return i;
     }
 }
-
 
 // 判断是否符合加载条件
 function cheackWillLoad() {
